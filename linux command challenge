@@ -1,0 +1,400 @@
+
+1	# Print "hello world".
+# Hint: There are many ways to print text on
+# the command line, one way is with the 'echo'
+# command.
+# 
+# Try it below and good luck!
+#	basbash(127)> echo "hello world" #################################################(1)##
+hello world
+# 👍 👍 👍  Correct!
+2	# You have a new challenge!
+# Print the current working directory.
+# 	bash(0)> pwd ####################################################################(2)##
+/var/challenges/current_working_directory
+# 👍 👍 👍  Correct!
+3	# You have a new challenge!
+# List all of the files in the current
+# directory, one file per line.
+# 	bash(0)> ls ######################################################################(3)##
+README
+# 👍 👍 👍  Correct!
+4	# You have a new challenge!
+# There is a file named "access.log" in the
+# current directory. Print the contents.
+# 	bash(0)> cat access.log ###################################################################(4)##
+163.56.115.58 - - [09/Jan/2017:22:29:57 +0100] "GET /posts/2/display HTTP/1.0" 200 3240
+75.113.188.234 - - [09/Jan/2017:22:30:43 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 1116
+69.16.40.148 - - [09/Jan/2017:22:34:33 +0100] "GET /pages/create HTTP/1.0" 500 3471
+225.219.54.140 - - [09/Jan/2017:22:35:30 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 500 2477
+207.243.19.2 - - [09/Jan/2017:22:38:03 +0100] "GET /bar/create HTTP/1.0" 200 1116
+199.37.62.156 - - [09/Jan/2017:22:42:18 +0100] "GET /posts/1/display HTTP/1.0" 200 2477
+55.74.240.123 - - [09/Jan/2017:22:44:25 +0100] "POST /posts/1/display HTTP/1.0" 200 3471
+251.111.109.143 - - [09/Jan/2017:22:49:02 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 2477
+101.163.230.250 - - [09/Jan/2017:22:52:31 +0100] "DELETE /posts/2/display HTTP/1.0" 404 2477
+200.19.168.148 - - [09/Jan/2017:22:57:11 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 3471
+# 👍 👍 👍  Correct!
+5	# You have a new challenge!
+# Print the last 5 lines of "access.log".
+# 	bash(1)> tail  -5 access.log ##########################################################################(5)##
+199.37.62.156 - - [09/Jan/2017:22:42:18 +0100] "GET /posts/1/display HTTP/1.0" 200 2477
+55.74.240.123 - - [09/Jan/2017:22:44:25 +0100] "POST /posts/1/display HTTP/1.0" 200 3471
+251.111.109.143 - - [09/Jan/2017:22:49:02 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 2477
+101.163.230.250 - - [09/Jan/2017:22:52:31 +0100] "DELETE /posts/2/display HTTP/1.0" 404 2477
+200.19.168.148 - - [09/Jan/2017:22:57:11 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 3471
+# 👍 👍 👍  Correct!
+6	# You have a new challenge!
+# There is a file named "access.log" in the
+# current working directory. Print all lines
+# in this file that contains the string "GET".
+# 	bash(0)> grep "GET" access.log ###################################################################################(6)##
+163.56.115.58 - - [09/Jan/2017:22:29:57 +0100] "GET /posts/2/display HTTP/1.0" 200 3240
+75.113.188.234 - - [09/Jan/2017:22:30:43 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 1116
+69.16.40.148 - - [09/Jan/2017:22:34:33 +0100] "GET /pages/create HTTP/1.0" 500 3471
+225.219.54.140 - - [09/Jan/2017:22:35:30 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 500 2477
+207.243.19.2 - - [09/Jan/2017:22:38:03 +0100] "GET /bar/create HTTP/1.0" 200 1116
+199.37.62.156 - - [09/Jan/2017:22:42:18 +0100] "GET /posts/1/display HTTP/1.0" 200 2477
+251.111.109.143 - - [09/Jan/2017:22:49:02 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 2477
+200.19.168.148 - - [09/Jan/2017:22:57:11 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 3471
+# 👍 👍 👍  Correct!
+7	# You have a new challenge!
+# How many lines contain tab characters in
+# the file named "file-with-tabs.txt" in the
+# current directory.
+# 	bash(☠️)> grep -P '\t' file-with-tabs.txt | wc -l #############################################################(7)##
+3
+# 👍 👍 👍  Correct!
+8	# You have a new challenge!
+# Print all files in the current directory,
+# one per line (not the full path, just the filename)
+# that contain the string "500".
+# 	bash(0)> grep -l '500' * #######################################################################################(8)##
+README
+access.log
+access.log.1
+# 👍 👍 👍  Correct!
+9	# You have a new challenge!
+# Print the relative file paths, one path
+# per line for all filenames that start with
+# "access.log" in the current directory.
+# 	bash(0)> ls access.log* ###################################################################(9)##
+access.log
+access.log.1
+access.log.2
+# 👍 👍 👍  Correct!
+10	# You have a new challenge!
+# Print all matching lines (without the filename
+# or the file path) in all files under the current
+# directory that start with "access.log" that
+# contain the string "500". Note that there are no
+# files named "access.log" in the current directory,
+# you will need to search recursively.
+# 	bash(0)> grep -Rh '500' --include=access.log* ###################################################################(10)##
+69.16.40.148 - - [09/Jan/2017:22:34:33 +0100] "GET /pages/create HTTP/1.0" 500 3471
+225.219.54.140 - - [09/Jan/2017:22:35:30 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 500 2477
+2.71.250.27 - - [09/Jan/2017:22:41:26 +0100] "GET /pages/create HTTP/1.0" 500 2477
+# 👍 👍 👍  Correct!
+11	# You have a new challenge!
+# Extract all IP addreses from files
+# that start with "access.log" printing one
+# IP address per line.
+# 	bash(0)> grep -oR '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' --include=access.log* #############################(11)##
+var/log/httpd/access.log:163.56.115.58
+var/log/httpd/access.log:75.113.188.234
+var/log/httpd/access.log:69.16.40.148
+var/log/httpd/access.log:225.219.54.140
+var/log/httpd/access.log:207.243.19.2
+var/log/httpd/access.log:199.37.62.156
+var/log/httpd/access.log:55.74.240.123
+var/log/httpd/access.log:251.111.109.143
+var/log/httpd/access.log:101.163.230.250
+var/log/httpd/access.log:200.19.168.148
+var/log/httpd/access.log.1:108.68.174.15
+var/log/httpd/access.log.1:17.2.20.139
+var/log/httpd/access.log.1:28.151.137.59
+var/log/httpd/access.log.1:199.150.241.179
+var/log/httpd/access.log.1:2.71.250.27
+var/log/httpd/access.log.1:17.137.186.194
+var/log/httpd/access.log.1:151.84.119.34
+var/log/httpd/access.log.1:4.180.204.195
+var/log/httpd/access.log.1:9.230.96.54
+var/log/httpd/access.log.1:157.143.233.21
+# 👍 👍 👍  Correct!
+12	# You have a new challenge!
+# Delete all of the files in this challenge
+# directory including all subdirectories and
+# their contents.
+# 	bash(0)> find ./ -mindepth 1 -maxdepth 1 | xargs rm -rf #########################################################(12)##
+# 👍 👍 👍  Correct!
+13	# You have a new challenge!
+# Count the number of files in the current
+# working directory. Print the number of
+# files as a single integer.
+# 	bash(0)> ls | wc -l ###########################################################################################(13)##
+2
+# 👍 👍 👍  Correct!
+14	# You have a new challenge!
+# Print the contents of access.log
+# sorted.
+# 	bash(0)> sort access.log ######################################################################################(14)##
+101.163.230.250 - - [09/Jan/2017:22:52:31 +0100] "DELETE /posts/2/display HTTP/1.0" 404 2477
+163.56.115.58 - - [09/Jan/2017:22:29:57 +0100] "GET /posts/2/display HTTP/1.0" 200 3240
+199.37.62.156 - - [09/Jan/2017:22:42:18 +0100] "GET /posts/1/display HTTP/1.0" 200 2477
+200.19.168.148 - - [09/Jan/2017:22:57:11 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 3471
+207.243.19.2 - - [09/Jan/2017:22:38:03 +0100] "GET /bar/create HTTP/1.0" 200 1116
+225.219.54.140 - - [09/Jan/2017:22:35:30 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 500 2477
+251.111.109.143 - - [09/Jan/2017:22:49:02 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 2477
+55.74.240.123 - - [09/Jan/2017:22:44:25 +0100] "POST /posts/1/display HTTP/1.0" 200 3471
+69.16.40.148 - - [09/Jan/2017:22:34:33 +0100] "GET /pages/create HTTP/1.0" 500 3471
+75.113.188.234 - - [09/Jan/2017:22:30:43 +0100] "GET /posts/foo?appID=xxxx HTTP/1.0" 200 1116
+# 👍 👍 👍  Correct!
+15	# You have a new challenge!
+# Print the number of lines
+# in access.log that contain the string
+# "GET".
+# 	bash(0)> grep 'GET' access.log | wc -l ####################################################################(15)##
+8
+# 👍 👍 👍  Correct!
+16	# You have a new challenge!
+# The file split-me.txt contains a list of
+# numbers separated by a ';' character.
+# Split the numbers on the ';' character,
+# one number per line.
+# 	bash(2)> grep -o '[0-9]\{1,3\}' split-me.txt ##################################################################(16)##
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+# 👍 👍 👍  Correct!
+17	# You have a new challenge!
+# Print the numbers 1 to 100 separated
+# by spaces.
+# 	bash(0)> seq -s ' ' 1 100 ##################################################################################(17)##
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 
+63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100
+# 👍 👍 👍  Correct!
+18	# You have a new challenge!
+# There are some files in this directory that
+# start with a dash in the filename.
+# Remove those files.
+# 	bash(1)> rm -rf ./-* ###############################################################################(18)##
+# 👍 👍 👍  Correct!
+19	# You have a new challenge!
+# There are files in this challenge with
+# different file extensions.
+# Remove all files with the .doc extension
+# recursively in the current working directory.
+#	bash(0)> find . -name "*.doc" -type f -delete #######################################################(19)##
+# 👍 👍 👍  Correct!
+20	# You have a new challenge!
+# There are files in this challenge with
+# different file extensions.
+# Remove all files without the .txt and .exe extensions
+# recursively in the current working directory.
+# 	bash(0)> find . -not \( -name "*.txt" -o -name "*.exe" \) -type f -delete ########################(20)##
+# 👍 👍 👍  Correct!
+21	# You have a new challenge!
+# This challenge has text files (with a .txt extension)
+# that contain the phrase "challenges are difficult".
+# Delete this phrase recursively from all text files.
+# Note that some files are in subdirectories so you will
+# need to search for them.
+# 	bash(0)> grep -Rl --include='*.*' 'challenges are difficult' | sed 's/ /\\ /g' | xargs sed  -i 's/challenges are difficult//g'##(21)##
+# 👍 👍 👍  Correct!
+22	# You have a new challenge!
+# The file sum-me.txt have a list of numbers,
+# one per line. Print the sum of these numbers.
+# 	bash(0)> awk '{ sum += $1 } END { print sum }' sum-me.txt ###################################################################(22)##
+42
+# 👍 👍 👍  Correct!
+23	# You have a new challenge!
+# Print all files in the current directory
+# recursively without the leading directory path.
+# 	bash(0)> find . -type f -name "*" -exec basename \{}  \;  ###################################################################(23)##
+error.doc
+corporis.xls
+odit.doc
+animi.doc
+necessitatibus.doc
+totam
+beatae.flac
+README
+libero.xls
+# 👍 👍 👍  Correct!
+24	# You have a new challenge!
+# Remove the extension from all files in
+# the current directory recursively.
+# 	bash(1)> for FILENAME in `find . -name "*.*"`; do mv --force "$FILENAME" "${FILENAME%.*}"; done #############################(24)##
+mv: cannot move '.' to '': No such file or directory
+# 👍 👍 👍  Correct!
+25	# You have a new challenge!
+# The files in this challenge contain spaces.
+# List all of the files (filenames only) in the
+# current directory but replace all spaces with
+# a '.' character.
+# 	bash(0)> ls |sed   's/\ /./g'  ##############################################################################################(25)##
+Adam.Simpson
+Alexis.Stein
+Allison.Brown
+Amy.Anderson
+Angel.Saunders
+Brad.Michael
+Briana.Wilson
+Carrie.Alexander
+Christine.Valdez
+Christopher.Miller
+Claudia.Mccormick
+Corey.Bird
+Courtney.Miller
+Crystal.Dunn
+Crystal.Valdez
+Erica.Richardson
+James.Harper
+James.Roberts
+Jared.Hill.DVM
+John.Nguyen
+Jorge.Ross
+Joseph.Hurst
+Karen.Ramirez
+Kevin.Price
+Kimberly.Parker
+Lori.Macias
+Luke.Mason
+Lynn.Robinson
+Mallory.Peterson
+Marie.Gutierrez
+Matthew.Romero
+Michaela.Hobbs
+Molly.Stevens
+Mr..James.Lopez
+Mr..Shawn.Martin
+Mrs..Jade.Clark
+Olivia.Irwin
+Parker.Gilbert
+README
+Robert.Gregory
+Robert.Hill
+Sarah.Hill
+Scott.Rice
+Sheri.Bishop
+Tamara.Anderson
+Tammy.Galloway
+Terri.Young
+Thomas.Parks
+Thomas.Washington
+Tiffany.Clark
+Yvonne.Myers
+# 👍 👍 👍  Correct!
+26	# You have a new challenge!
+# There are a mix of files in this directory
+# that start with letters and numbers. Print
+# the filenames (just the filenames) of all
+# files that start with a number recursively
+# in the current directory.
+# 	
+bash(0)> find . -name '[0-9]*' -type f -printf "%f\n"; ##########################################################################(26)##
+540Katherine Jones
+78Michelle Spencer
+757Robert Marquez
+293Linda Bennett
+335John Joseph
+593Brett Martin
+04Carrie Alexander
+436Teresa Owens
+639Charles Ferguson
+477Thomas Pierce MD
+778Holly Archer
+3maxime.mp3
+388Andrew Carter
+682Terri Jones
+42Robert Hill
+511Tammy Welch
+402Nancy Henson
+48Thomas Allen
+974Michael Bowman
+25Brandon Mcdonald
+132Rebecca Rubio
+670James Jacobs
+99blanditiis.avi
+737Jeffrey Davis
+# 👍 👍 👍  Correct!
+27	# You have a new challenge!
+# Print the 25th line of the file faces.txt
+# 	bash(0)> sed -n '25p' faces.txt #################################################################################(27)##
+¯\_(ツ)_/¯
+# 👍 👍 👍  Correct!
+
+
+########################
+head -15 abc.txt | tail -1
+28	# You have a new challenge!
+# Print the file faces.txt, but only print the first instance of each
+# duplicate line, even if the duplicates don't appear next to each other.
+# Note that order matters so don't sort the lines before removing duplicates.
+# 	bash(2)> awk '!x[$0]++' "faces.txt" #############################################################################(28)##
+(◕‿◕)
+(^̮^)
+ʘ‿ʘ
+ಠ_ಠ
+ಠ⌣ಠ
+ಠ‿ಠ
+(ʘ‿ʘ)
+(ಠ_ಠ)
+¯\_(ツ)_/¯
+(ಠ⌣ಠ
+ಠಠ⌣ಠ)
+(ಠ‿ಠ)
+٩◔̯◔۶
+ヽ༼ຈل͜ຈ༽ﾉ
+♥‿♥
+◔̯◔
+⊙﹏⊙
+(¬_¬)
+(；一_一)
+(͡° ͜ʖ ͡°)
+(° ͜ʖ °)
+¯\(°_o)/¯
+( ﾟヮﾟ)
+(︺︹︺)
+# 👍 👍 👍  Correct!
+29	# You have a new challenge!
+# The following excerpt from War and Peace is saved to
+# the file 'war_and_peace.txt':
+# 
+# She is betraying us! Russia alone must save Europe.
+# Our gracious sovereign recognizes his high vocation
+# and will be true to it. That is the one thing I have
+# faith in! Our good and wonderful sovereign has to
+# perform the noblest role on earth, and he is so virtuous
+# and noble that God will not forsake him. He will fulfill
+# his vocation and crush the hydra of revolution, which
+# has become more terrible than ever in the person of this
+# murderer and villain!
+# 
+# The file however has been corrupted, there are random '!'
+# marks inserted throughout.  Print the original text.
+# 	bash(127)> < war_and_peace.txt tr -s '!' | sed 's/!\([a-z]\)/\1/g' | sed 's/!\( [a-z]\)/\1/g' | sed 's/!\.!/./g' | sed 's/ !/ /g' ###############################(29)##
+She is betraying us! Russia alone must save Europe.
+Our gracious sovereign recognizes his high vocation
+and will be true to it. That is the one thing I have
+faith in! Our good and wonderful sovereign has to
+perform the noblest role on earth, and he is so virtuous
+and noble that God will not forsake him. He will fulfill
+his vocation and crush the hydra of revolution, which
+has become more terrible than ever in the person of this
+murderer and villain!
+# 👍 👍 👍  Correct!
+30	# You have a new challenge!
+# access.log.1 and access.log.2 are http server logs. Print the IP
+# addresses common to both files, one per line.
+# 	bash(0)> comm -12 <(grep -oP '\d+\.\d+\.\d+\.\d+' access.log.1|sort -u) <(grep -oP '\d+\.\d+\.\d+\.\d+' access.log.2|sort -u) ########################################(30)##
+108.68.174.15
+17.137.186.194
+2.71.250.27
+28.151.137.59
